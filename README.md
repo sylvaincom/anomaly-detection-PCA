@@ -18,7 +18,7 @@ Anomaly detection on a production line using principal component analysis (PCA) 
 - I was only able to publish one fourth of the total project, the rest being confidential.
 - The MATLAB scripts are commented in French. 
 - The report (uploaded soon) is in French.
-- The data is from "Seongkyu Yoon and John MacGregor. Fault diagnosis with multivariate statistical models part i : using steady state fault signatures. Journal of Process Control, 11(4) :387 – 400, 2001"
+- The data `datav3.mat` and `dataDefautv3.mat` is from "Seongkyu Yoon and John MacGregor. Fault diagnosis with multivariate statistical models part i : using steady state fault signatures. Journal of Process Control, 11(4) :387 – 400, 2001"
 
 ## How to use this repository
 

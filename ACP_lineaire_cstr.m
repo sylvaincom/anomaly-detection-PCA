@@ -8,6 +8,7 @@ clear all % pour supprimer toutes les variables contenues dans le Workspace
 close all % pour fermer les figures précédentes
 clc % clear command window
 
+%__________________________________________________________________________
 %% Importation des données (sans défaut)
 
 % cd : pour voir la structure de l'arborescence des fichiers
@@ -27,6 +28,7 @@ dataname = head(dataname,5) % pour visualiser les 5 premières lignes du tableau
 
 clear name data0 colNames
 
+%__________________________________________________________________________
 %% Traitement et nettoyage des données : obtention de la matrice des données Xb (sans défaut)
 
 % Suppression des colonnes et lignes non pertinentes
@@ -64,6 +66,7 @@ ylabel(['Variable ', num2str(j)])
 
 clear data j txt2 txt1
 
+%__________________________________________________________________________
 %% Vérification de l'hypothèse : les données suivent une loi normale multivariable
 
 j = 6 ; % tester quelques valeurs de j (avec j compris entre 1 et m)
@@ -101,6 +104,7 @@ rng default;  % for reproducibility
 x = random(pd,100,1);
 h = chi2gof(x)
 
+%__________________________________________________________________________
 %% Obtention de X : matrice des données centrées et réduites (sans défaut)
 
 X = zeros(N,m) ; % initialisation de X qui est la matrice des données centrée réduite
@@ -116,6 +120,7 @@ end
 
 clear j
 
+%__________________________________________________________________________
 %% Obtention de l'espace principal Pp et de l'espace résiduel Pr
 
 S = (1/(N-1))*X'*X ; % matrice de variance / covariance
@@ -164,6 +169,7 @@ legend([{' PCV', sprintf(' cible : %d%% de l''information', round(info*100,2))}]
 
 clear l2 PCV2 abs_l2 ord_PCV2
 
+%__________________________________________________________________________
 %% Calcul de Xp qui est l'estimation de X par l'ACP : Xp est la projection de X sur l'espace principal Pp
 
 Xp = zeros(N,m) ; % initialisation
@@ -190,6 +196,7 @@ legend(sprintf(' erreur X(:,%d)-Xp(:,%d)', j, j), ' droite : sans erreur')
 
 clear j txt1
 
+%__________________________________________________________________________
 %% Calcul de la SPE (erreur quadratique de prédiction)
 
 SPE = zeros(N,1) ; % initialisation de SPE : vecteur colonne dont chaque ligne
@@ -211,6 +218,7 @@ ylabel('SPE')
 
 % xlswrite('spe.xlsx',SPE); % exportation du vecteur SPE en fichier spe.xlsx (Excel)
 
+%__________________________________________________________________________
 %% Calcul du seuil de détection delta2
 
 theta = zeros(3,1) ; % initialisation
@@ -236,6 +244,7 @@ xlabel('Indice de l''observation')
 ylabel('SPE')
 legend(' SPE', ' seuil de détection')
 
+%__________________________________________________________________________
 %% Importation et traitement des données défaillantes
 
 name2 = 'dataDefautv3.mat' ; % nom du fichier comportant des données défaillantes
@@ -287,6 +296,7 @@ end
 
 clear data02 data2 j
 
+%__________________________________________________________________________
 %% Détection des observations défaillantes
 
 Xp2 = zeros(N2,m2) ;
@@ -352,6 +362,7 @@ pourcentage_de_mesures_defaillantes = round(length(defaillance)/N2*100,0) % 93
 % xlabel('Indice de l''observation i')
 % ylabel('Valeur mesurée FA')
 
+%__________________________________________________________________________
 %% D'où provient la défaillance ?
 
 % Rappel : il faut regarder les données centrées et réduites.

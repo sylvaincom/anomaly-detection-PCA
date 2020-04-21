@@ -20,7 +20,7 @@ Anomaly detection on a production line using principal component analysis (PCA) 
 - `ACP_lineaire_cstr.m` is a MATLAB script detecting anomalies in `dataDefautv3.mat` with comparison to `datav3.mat` using a (linear) PCA (principal component analysis)
 - `ACP_non_lineaire_cstr.m` is a MATLAB script detecting anomalies in `dataDefautv3.mat` with comparison to `datav3.mat` using a (non-linear) KPCA (kernel principal component analysis)
 
-`ACP_lineaire_cstr.m` can be used `ACP_non_lineaire_cstr.m` independently: there are two methods with the same goal.
+`ACP_lineaire_cstr.m` and `ACP_non_lineaire_cstr.m` can be used independently: there are two methods with the same goal.
 
 ## To note
 
